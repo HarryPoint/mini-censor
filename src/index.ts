@@ -61,7 +61,7 @@ class Censor {
   }
   filter(
     text: string,
-    options: { replace: boolean; replaceString?: string } = { replace: false }
+    options: { replace: boolean; replaceString?: string } = { replace: true }
   ): { text: string; words: string[]; pass: boolean } {
     const { replace, replaceString = this.replaceString } = options;
     let pass = true;

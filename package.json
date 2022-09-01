@@ -1,16 +1,33 @@
 {
   "name": "mini-censor",
   "version": "1.0.0",
-  "description": "敏感词过滤",
+  "description": "敏感词过滤，支持自定义敏感词内容, 基于Aho–Corasick算法，",
   "main": "index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build-ts": "tsc"
   },
   "keywords": [
-    "censor"
+    "mini-censor",
+    "censor",
+    "sensitive word filter",
+    "sensitive",
+    "filter"
   ],
-  "author": "HarryPoint",
+  "author": {
+    "name": "HarryPoint",
+    "email": "1751826104@qq.com",
+    "url": "https://harrypoint.github.io/"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HarryPoint/mini-censor/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarryPoint/mini-censor.git"
+  },
+  "homepage": "https://github.com/HarryPoint/mini-censor#readme",
   "devDependencies": {
     "typescript": "^4.8.2"
   }

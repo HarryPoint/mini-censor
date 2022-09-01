@@ -1,0 +1,17 @@
+{
+  "name": "mini-censor",
+  "version": "1.0.0",
+  "description": "敏感词过滤",
+  "main": "index.js",
+  "scripts": {
+    "build-ts": "tsc"
+  },
+  "keywords": [
+    "censor"
+  ],
+  "author": "HarryPoint",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.8.2"
+  }
+}

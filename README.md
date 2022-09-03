@@ -54,8 +54,6 @@ const censor = new Censor(["敏感词数组"]);
 
 ### 方法
 
-所有方法都提供同步/异步两种。英文字母会全部转换成大写比较。
-
 #### filter(text, options)
 
 > 类型如下

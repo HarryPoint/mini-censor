@@ -61,7 +61,7 @@ const censor = new Censor(["敏感词数组"]);
 ```typescript
   filter(text: string, options?: {
       replace: boolean;
-      replaceString?: string;
+      replaceWidth?: string;
   }): {
       text: string;
       words: string[];
@@ -83,7 +83,7 @@ censor.filter("这是一个敏感词字符串");
  *   pass: false;
  * }
  */
-censor.filter("这是一个敏感词字符串", { replaceString: "😊" });
+censor.filter("这是一个敏感词字符串", { replaceWidth: "😊" });
 /**
  * {
  *   text: "这是一个😊😊😊字符串",

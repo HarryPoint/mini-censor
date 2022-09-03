@@ -18,7 +18,7 @@ class Node {
 class Censor {
   constructor(
     private targets: string[] = [],
-    public replaceString: string = "*",
+    public replaceWidth: string = "*",
     public root: Node = new Node("")
   ) {
     this.createTree();
@@ -61,33 +61,48 @@ class Censor {
   }
   filter(
     text: string,
-    options: { replace: boolean; replaceString?: string } = { replace: true }
+    options: { replace: boolean; replaceWidth?: string } = { replace: false }
   ): { text: string; words: string[]; pass: boolean } {
-    const { replace, replaceString = this.replaceString } = options;
+    const { replace, replaceWidth = this.replaceWidth } = options;
     let pass = true;
     let filterText = "";
     const filterWords = new Set<string>([]);
     let currentNode: Node | undefined = this.root;
+    let nextNode: Node | undefined;
+    let failure: Node | undefined;
     let textIndex = 0;
     while (currentNode && textIndex < text.length) {
       let w = text[textIndex];
       filterText += w;
       textIndex += 1;
-      if (Object.hasOwn(currentNode.children, w)) {
-        currentNode = currentNode.children[w] as Node;
-        if (currentNode.isWord) {
-          pass = false;
-          if (replace) {
-            filterText =
-              filterText.slice(0, -currentNode.depth) +
-              replaceString.repeat(currentNode.depth);
-          }
-          filterWords.add(this.collectWord(currentNode));
-          currentNode = currentNode.failure;
+      nextNode = currentNode.children[w];
+      if (!nextNode) {
+        failure = currentNode.failure;
+        while (failure) {
+          nextNode = failure.children[w];
+          if (nextNode) break;
+          failure = failure.failure;
         }
-      } else if (currentNode.depth !== 0) {
-        currentNode = currentNode.failure;
       }
+
+      if (nextNode) {
+        failure = nextNode as Node;
+        do {
+          if (failure.isWord) {
+            pass = false;
+            if (replace) {
+              filterText =
+                filterText.slice(0, -failure.depth) +
+                replaceWidth.repeat(failure.depth);
+            }
+            filterWords.add(this.collectWord(failure));
+          }
+          failure = failure.failure;
+        } while (failure && failure.depth !== 0);
+        currentNode = nextNode;
+        continue;
+      }
+      currentNode = this.root;
     }
     return {
       text: filterText,

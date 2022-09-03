@@ -38,6 +38,7 @@ class Censor {
         return node;
       }, this.root);
     });
+    // 构建 failure指向
     let currentQueue = Object.values(this.root.children);
     while (currentQueue.length) {
       let nextQueue: Node[] = [];
@@ -84,7 +85,6 @@ class Censor {
           failure = failure.failure;
         }
       }
-
       if (nextNode) {
         failure = nextNode;
         do {

@@ -86,7 +86,7 @@ class Censor {
       }
 
       if (nextNode) {
-        failure = nextNode as Node;
+        failure = nextNode;
         do {
           if (failure.isWord) {
             pass = false;
@@ -100,9 +100,9 @@ class Censor {
           failure = failure.failure;
         } while (failure && failure.depth !== 0);
         currentNode = nextNode;
-        continue;
+      } else {
+        currentNode = this.root;
       }
-      currentNode = this.root;
     }
     return {
       text: filterText,

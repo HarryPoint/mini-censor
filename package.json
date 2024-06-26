@@ -1,6 +1,6 @@
 {
   "name": "mini-censor",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "敏感词过滤，支持自定义敏感词内容, 基于Aho–Corasick算法，",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

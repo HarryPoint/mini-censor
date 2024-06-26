@@ -1,3 +1,9 @@
+# mini-censor
+
+[![NPM][npm-version-image]][npm-version-url] 
+[![CDNJS][cdnjs-version-image]][cdnjs-version-url] 
+[![gzip-size][gzip-size]][gzip-url]
+
 ## 🎇 说明
 
 基于 Aho–Corasick 算法实现的敏感词过滤方案，Aho–Corasick 算法是由 Alfred V. Aho 和 Margaret J.Corasick 发明的字符串搜索算法，用于在输入的一串字符串中匹配有限组“字典”中的子串。它与普通字符串匹配的不同点在于同时与所有字典串进行匹配。算法均摊情况下具有近似于线性的时间复杂度，约为字符串的长度加所有匹配的数量。
@@ -104,4 +110,13 @@ censor.filter("这是一个敏感词字符串", { replace: false });
  */
 ```
 
-> 参考： https://github.com/ZhelinCheng/mint-filter
+## LICENSE
+
+MIT
+
+[npm-version-image]: https://img.shields.io/npm/v/mini-censor.svg?style=flat-square
+[npm-version-url]: https://www.npmjs.com/package/mini-censor
+[cdnjs-version-image]: https://img.shields.io/cdnjs/v/mini-censor.svg?style=flat-square
+[cdnjs-version-url]: https://cdnjs.com/libraries/mini-censor
+[gzip-size]: https://img.badgesize.io/https://unpkg.com/mini-censor/dist/index.js?compression=gzip&style=flat-square
+[gzip-url]: https://unpkg.com/mini-censor/dist/index.js

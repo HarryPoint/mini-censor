@@ -1,3 +1,9 @@
+# mini-censor
+
+[![NPM][npm-version-image]][npm-version-url] 
+[![CDNJS][cdnjs-version-image]][cdnjs-version-url] 
+[![gzip-size][gzip-size]][gzip-url]
+
 ## 🎇 Description
 
 A sensitive word filtering solution based on the Aho–Corasick algorithm. The Aho–Corasick algorithm is a string search algorithm invented by Alfred V. Aho and Margaret J. Corasick. It is used to match substrings from a finite set of "dictionary" words within an input string. Its difference from ordinary string matching is that it matches against all dictionary strings simultaneously. The algorithm has an amortized time complexity that is nearly linear, approximately equal to the length of the string plus the number of matches.
@@ -103,3 +109,14 @@ censor.filter("This is a string with a sensitive word", { replace: false });
  * }
  */
 ```
+
+## LICENSE
+
+MIT
+
+[npm-version-image]: https://img.shields.io/npm/v/mini-censor.svg?style=flat-square
+[npm-version-url]: https://www.npmjs.com/package/mini-censor
+[cdnjs-version-image]: https://img.shields.io/cdnjs/v/mini-censor.svg?style=flat-square
+[cdnjs-version-url]: https://cdnjs.com/libraries/mini-censor
+[gzip-size]: https://img.badgesize.io/https://unpkg.com/mini-censor/dist/index.js?compression=gzip&style=flat-square
+[gzip-url]: https://unpkg.com/mini-censor/dist/index.js

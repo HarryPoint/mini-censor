@@ -1,7 +1,6 @@
 # mini-censor
 
 [![NPM][npm-version-image]][npm-version-url] 
-[![CDNJS][cdnjs-version-image]][cdnjs-version-url] 
 [![gzip-size][gzip-size]][gzip-url]
 
 ## 🎇 说明
@@ -116,7 +115,5 @@ MIT
 
 [npm-version-image]: https://img.shields.io/npm/v/mini-censor.svg?style=flat-square
 [npm-version-url]: https://www.npmjs.com/package/mini-censor
-[cdnjs-version-image]: https://img.shields.io/cdnjs/v/mini-censor.svg?style=flat-square
-[cdnjs-version-url]: https://cdnjs.com/libraries/mini-censor
 [gzip-size]: https://img.badgesize.io/https://unpkg.com/mini-censor/dist/index.js?compression=gzip&style=flat-square
 [gzip-url]: https://unpkg.com/mini-censor/dist/index.js
